@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Initialize React TypeScript Frontend",
+			"type": "shell",
+			"command": "npx create-react-app frontend --template typescript",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

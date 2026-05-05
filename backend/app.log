@@ -1,0 +1,264 @@
+2026-04-29 13:00:37,657 INFO Request started: OPTIONS /register
+2026-04-29 13:00:37,664 INFO Request completed: OPTIONS /register -> 400
+2026-04-29 13:03:26,682 INFO Request started: OPTIONS /register
+2026-04-29 13:03:26,683 INFO Request completed: OPTIONS /register -> 200
+2026-04-29 13:03:26,693 INFO Request started: POST /register
+2026-04-29 13:03:26,832 WARNING (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-04-29 13:03:26,844 ERROR Unhandled error for POST /register
+Traceback (most recent call last):
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\main.py", line 88, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\main.py", line 110, in register
+    hashed_password=pwd_context.hash(user.password),
+                    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\context.py", line 2258, in hash
+    return record.hash(secret, **kwds)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 779, in hash
+    self.checksum = self._calc_checksum(secret)
+                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 591, in _calc_checksum
+    self._stub_requires_backend()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 2254, in _stub_requires_backend
+    cls.set_backend()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 2156, in set_backend
+    return owner.set_backend(name, dryrun=dryrun)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 2163, in set_backend
+    return cls.set_backend(name, dryrun=dryrun)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 2188, in set_backend
+    cls._set_backend(name, dryrun)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 2311, in _set_backend
+    super(SubclassBackendMixin, cls)._set_backend(name, dryrun)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 2224, in _set_backend
+    ok = loader(**kwds)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 626, in _load_backend_mixin
+    return mixin_cls._finalize_backend_mixin(name, dryrun)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 421, in _finalize_backend_mixin
+    if detect_wrap_bug(IDENT_2A):
+       ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 380, in detect_wrap_bug
+    if verify(secret, bug_hash):
+       ~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 792, in verify
+    return consteq(self._calc_checksum(secret), chk)
+                   ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 655, in _calc_checksum
+    hash = _bcrypt.hashpw(secret, config)
+ValueError: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+2026-04-29 13:05:00,034 INFO Request started: POST /register
+2026-04-29 13:05:00,052 WARNING (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-04-29 13:05:00,061 ERROR Unhandled error for POST /register
+Traceback (most recent call last):
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\main.py", line 88, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\main.py", line 110, in register
+    hashed_password=pwd_context.hash(user.password),
+                    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\context.py", line 2258, in hash
+    return record.hash(secret, **kwds)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 779, in hash
+    self.checksum = self._calc_checksum(secret)
+                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 591, in _calc_checksum
+    self._stub_requires_backend()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 2254, in _stub_requires_backend
+    cls.set_backend()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 2156, in set_backend
+    return owner.set_backend(name, dryrun=dryrun)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 2163, in set_backend
+    return cls.set_backend(name, dryrun=dryrun)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 2188, in set_backend
+    cls._set_backend(name, dryrun)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 2311, in _set_backend
+    super(SubclassBackendMixin, cls)._set_backend(name, dryrun)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 2224, in _set_backend
+    ok = loader(**kwds)
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 626, in _load_backend_mixin
+    return mixin_cls._finalize_backend_mixin(name, dryrun)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 421, in _finalize_backend_mixin
+    if detect_wrap_bug(IDENT_2A):
+       ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 380, in detect_wrap_bug
+    if verify(secret, bug_hash):
+       ~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\utils\handlers.py", line 792, in verify
+    return consteq(self._calc_checksum(secret), chk)
+                   ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 655, in _calc_checksum
+    hash = _bcrypt.hashpw(secret, config)
+ValueError: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+2026-04-29 13:06:19,272 WARNING (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\dell coi5\Desktop\todo list app\backend\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-04-29 13:08:08,269 INFO Request started: POST /register
+2026-04-29 13:08:09,057 INFO User registered: tarirotshuma51
+2026-04-29 13:08:09,059 INFO Request completed: POST /register -> 200
+2026-04-29 13:08:14,838 INFO Request started: OPTIONS /login
+2026-04-29 13:08:14,839 INFO Request completed: OPTIONS /login -> 200
+2026-04-29 13:08:14,846 INFO Request started: POST /login
+2026-04-29 13:08:15,622 INFO User logged in: tarirotshuma51
+2026-04-29 13:08:15,625 INFO Request completed: POST /login -> 200
+2026-04-29 13:08:15,696 INFO Request started: OPTIONS /protected
+2026-04-29 13:08:15,698 INFO Request started: OPTIONS /protected
+2026-04-29 13:08:15,698 INFO Request completed: OPTIONS /protected -> 200
+2026-04-29 13:08:15,704 INFO Request completed: OPTIONS /protected -> 200
+2026-04-29 13:08:15,716 INFO Request started: GET /protected
+2026-04-29 13:08:15,722 INFO Protected route accessed by: tarirotshuma51
+2026-04-29 13:08:15,722 INFO Request completed: GET /protected -> 200
+2026-04-29 13:08:15,732 INFO Request started: GET /protected
+2026-04-29 13:08:15,734 INFO Protected route accessed by: tarirotshuma51
+2026-04-29 13:08:15,734 INFO Request completed: GET /protected -> 200
+2026-04-29 13:08:33,809 INFO Request started: POST /login
+2026-04-29 13:08:34,537 INFO User logged in: tarirotshuma51
+2026-04-29 13:08:34,539 INFO Request completed: POST /login -> 200
+2026-04-29 13:08:34,611 INFO Request started: GET /protected
+2026-04-29 13:08:34,614 INFO Protected route accessed by: tarirotshuma51
+2026-04-29 13:08:34,614 INFO Request completed: GET /protected -> 200
+2026-04-29 13:08:34,619 INFO Request started: GET /protected
+2026-04-29 13:08:34,621 INFO Protected route accessed by: tarirotshuma51
+2026-04-29 13:08:34,623 INFO Request completed: GET /protected -> 200
+2026-04-29 13:25:04,478 INFO Request started: OPTIONS /login
+2026-04-29 13:25:04,481 INFO Request completed: OPTIONS /login -> 200
+2026-04-29 13:25:04,489 INFO Request started: POST /login
+2026-04-29 13:25:04,518 ERROR Login failed for user: tarie
+2026-04-29 13:25:04,521 INFO Request completed: POST /login -> 401
+2026-05-05 11:37:10,400 INFO Request started: OPTIONS /login
+2026-05-05 11:37:10,402 INFO Request completed: OPTIONS /login -> 200
+2026-05-05 11:37:10,406 INFO Request started: POST /login
+2026-05-05 11:37:11,895 INFO User logged in: tarirotshuma51
+2026-05-05 11:37:11,934 INFO Request completed: POST /login -> 200
+2026-05-05 11:37:12,004 INFO Request started: OPTIONS /protected
+2026-05-05 11:37:12,005 INFO Request started: OPTIONS /protected
+2026-05-05 11:37:12,007 INFO Request completed: OPTIONS /protected -> 200
+2026-05-05 11:37:12,015 INFO Request completed: OPTIONS /protected -> 200
+2026-05-05 11:37:12,021 INFO Request started: GET /protected
+2026-05-05 11:37:12,026 INFO Protected route accessed by: tarirotshuma51
+2026-05-05 11:37:12,026 INFO Request completed: GET /protected -> 200
+2026-05-05 11:37:12,031 INFO Request started: GET /protected
+2026-05-05 11:37:12,033 INFO Protected route accessed by: tarirotshuma51
+2026-05-05 11:37:12,034 INFO Request completed: GET /protected -> 200
+2026-05-05 11:41:27,023 INFO Request started: OPTIONS /login
+2026-05-05 11:41:27,024 INFO Request completed: OPTIONS /login -> 200
+2026-05-05 11:41:27,028 INFO Request started: POST /login
+2026-05-05 11:41:28,268 INFO User logged in: tarirotshuma51
+2026-05-05 11:41:28,269 INFO Request completed: POST /login -> 200
+2026-05-05 11:41:28,639 INFO Request started: OPTIONS /protected
+2026-05-05 11:41:28,640 INFO Request started: OPTIONS /protected
+2026-05-05 11:41:28,641 INFO Request completed: OPTIONS /protected -> 200
+2026-05-05 11:41:28,642 INFO Request completed: OPTIONS /protected -> 200
+2026-05-05 11:41:28,645 INFO Request started: GET /protected
+2026-05-05 11:41:28,647 INFO Protected route accessed by: tarirotshuma51
+2026-05-05 11:41:28,647 INFO Request completed: GET /protected -> 200
+2026-05-05 11:41:28,652 INFO Request started: GET /protected
+2026-05-05 11:41:28,653 INFO Protected route accessed by: tarirotshuma51
+2026-05-05 11:41:28,655 INFO Request completed: GET /protected -> 200
